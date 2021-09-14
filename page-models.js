@@ -1,7 +1,7 @@
-import { Selector, t } from "testcafe";
+import { Selector } from "testcafe";
 
-//multiple models can be created for different tests
-class Devices {
+export default class Page {
+  //text can be named something else
   constructor() {
     //introduce an element's property to the model and assign a selector to it, in this case it would be devicesPage
 
@@ -14,6 +14,6 @@ class Devices {
 }
 
 //Part of Test Two
-class DeviceInput {
-  constructor() {}
-}
+// class DeviceInput {
+//   constructor() {}
+// }

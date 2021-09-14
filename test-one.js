@@ -1,17 +1,42 @@
-import device from "./device-models";
+import page from "./page-models";
+import https from "https";
+
+const executeRequest = () => {
+  return new Promise((resolve) => {
+    const options = {
+      hostname: "http://localhost:3000/devices",
+      port: 3000,
+      path: "/",
+      method: "GET",
+    };
+
+    const req = https.request(options, (res) => {
+      console.log("statusCode:", res.statusCode);
+      console.log("headers:", res.headers);
+      resolve();
+    });
+
+    req.on("error", (e) => {
+      console.error(e);
+    });
+
+    req.end();
+  });
+};
 
 fixture`ninja-rmm-tests`.page`http://localhost:3001`;
 
 test("Test One", async (t) => {
+  //    for(const page of devices.)
   await t
-    .expect(device.name.visible)
+    .expect(page.name.visible)
     .ok()
-    .expect(device.type.visible)
+    .expect(page.type.visible)
     .ok()
-    .expect(device.capacity.visible)
+    .expect(page.capacity.visible)
     .ok()
-    .expect(device.editButton.visible)
+    .expect(page.editButton.visible)
     .ok()
-    .expect(device.removeButton.visible)
+    .expect(page.removeButton.visible)
     .ok();
 });

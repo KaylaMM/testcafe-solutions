@@ -1,0 +1,20 @@
+{
+  "name": "testcafe-solutions",
+  "version": "1.0.0",
+  "main": "page-models.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaylaMM/testcafe-solutions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaylaMM/testcafe-solutions/issues"
+  },
+  "homepage": "https://github.com/KaylaMM/testcafe-solutions#readme",
+  "description": ""
+}
