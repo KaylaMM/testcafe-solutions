@@ -3,26 +3,23 @@ import { Selector } from "testcafe";
 const axios = require("axios");
 
 export async function getDevices() {
-  axios
+  return axios
     .get("http://localhost:3000/devices")
     .then((res) => {
-      console.log(res.data);
+      return res.data;
     })
     .catch((error) => {
       console.log(error);
     });
 }
 
-class Devices {
-  constructor() {
-    this.name = Selector(".device-name");
-    this.type = Selector(".device-type");
-    this.capacity = Selector(".device-capacity");
+export class Devices {
+  constructor(text) {
+    this.deviceInfo = Selector(".device-info");
+    this.name = Selector(".device-name").withText(text);
+    this.type = Selector(".device-type").withText(text);
+    this.capacity = Selector(".device-capacity").withText(text);
     this.editButton = Selector(".device-edit");
     this.removeButton = Selector(".device-remove");
   }
 }
-
-export default new Devices
-
-
